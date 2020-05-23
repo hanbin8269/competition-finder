@@ -10,14 +10,12 @@ class User(AbstractUser):
         unique=True,
     )
 
-    
-
     nickname = models.CharField(
         max_length=20,
         null=False,
         unique=True,
     )
-
+    
 
     USERNAME_FIELD = 'nickname'
     REQUIRED_FIELDS = ['email']

@@ -53,7 +53,7 @@ class UserLookupView(View):
 class TokenCheckView(View):
     def post(self, request):
         data = json.loads(request.body)
-
+        # 토큰 해석
         decoded_token = jwt.decode(data['token'], SECRET_KEY, algorithm = 'HS256')
 
         if User.objects.filter(email = decoded_token['email']).exists():
